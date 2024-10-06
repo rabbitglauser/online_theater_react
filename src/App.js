@@ -1,11 +1,24 @@
+// install this for it to work npm install @fortawesome/fontawesome-free
 import React from 'react';
 import './styles/App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            height: 5,
+            border: 'none', // Remove the default border
+        }}
+    />
+);
 
 function App() {
     return (
         <div className="App">
+            <div className="background-image"></div>
             <nav className="navbar">
                 <div className="navbar-left">
                     <a href="/" className="logo">Kino Zug</a>
@@ -13,7 +26,7 @@ function App() {
                 <div className="navbar-center">
                     <ul className="nav-links">
                         <li>
-                            <a href="/Program">Products</a>
+                            <a href="/Program/Program.js">Program</a>
                         </li>
                         <li>
                             <a href="/uber-uns">Über uns</a>
@@ -33,9 +46,15 @@ function App() {
                     </a>
                 </div>
             </nav>
+            <div className="content">
+                <h1>Welcome to Kino Zug!</h1>
+                <ColoredLine color="white"/>
+                <h2>Zug most iconic venue for films </h2>
+                <h3>theater music and more</h3>
         </div>
-    );
+</div>
+)
+    ;
 }
 
 export default App;
-
